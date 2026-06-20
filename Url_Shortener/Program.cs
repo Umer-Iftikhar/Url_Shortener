@@ -1,6 +1,26 @@
+using Microsoft.EntityFrameworkCore;
+using Url_Shortener.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Database connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found");
+var serverVersion = new MySqlServerVersion(new Version(8, 0, 31));
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseMySql(connectionString, serverVersion);
+});
+
+
+
+
+
 // Add services to the container.
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
