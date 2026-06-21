@@ -1,5 +1,6 @@
 using HashidsNet;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 using Url_Shortener.Data;
 using Url_Shortener.Repositories.Implementations;
 using Url_Shortener.Repositories.Interfaces;
@@ -39,6 +40,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

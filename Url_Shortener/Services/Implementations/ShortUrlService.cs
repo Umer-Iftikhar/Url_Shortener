@@ -37,12 +37,12 @@ namespace Url_Shortener.Services.Implementations
 
             await _repository.UpdateAsync(entity);
 
-            var shorlUrl = $"{baseUrl.TrimEnd('/')}/{shortCode}";
+            var shortUrl = $"{baseUrl.TrimEnd('/')}/{shortCode}";
 
             var response = new CreateShortUrlResponseDto
             {
                 ShortCode = shortCode,
-                ShortUrl = shorlUrl,
+                ShortUrl = shortUrl,
                 OriginalUrl = request.OriginalUrl,
             };
 
