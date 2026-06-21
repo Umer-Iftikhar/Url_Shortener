@@ -26,11 +26,11 @@ A simple, production-ready URL shortener built with ASP.NET Core 9, MySQL 8, and
 ## Architecture
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐     ┌────────────┐
-│  Controller │────▶│   Service    │────▶│  Repository │────▶│   MySQL    │
-│  (API/302)  │     │ (Hashids +   │     │  (EF Core)  │     │   (Db)     │
-│             │◀────│   Flow Ctrl) │◀────│             │◀────│            │
-└─────────────┘     └──────────────┘     └─────────────┘     └────────────┘
+┌─────────────┐      ┌──────────────┐      ┌─────────────┐      ┌────────────┐
+│  Controller │────▶│   Service     │────▶│  Repository │────▶│   MySQL     │
+│  (API/302)  │      │ (Hashids +   │      │  (EF Core)  │      │   (Db)      │
+│             │◀────│   Flow Ctrl)  │◀────│             │◀────│             │
+└─────────────┘      └──────────────┘      └─────────────┘      └────────────┘
 ```
 
 ### Two-Step Create Flow
