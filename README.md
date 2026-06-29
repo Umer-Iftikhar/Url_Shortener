@@ -49,7 +49,7 @@ A simple, production-ready URL shortener built with ASP.NET Core 9, MySQL 8, and
 4. Service assembles full short URL and returns it
 ```
 
-> **Known Trade-off:** There's a brief window between Step 1 and Step 3 where a row exists with a null `ShortCode`. If the server crashes during this window, the row is orphaned. For a portfolio project, this is acceptable.
+> **Known Trade-off:** There's a brief window between Step 1 and Step 3 where a row exists with a null `ShortCode`. If the server crashes during this window, the row is orphaned. 
 
 ## Screenshots
 
